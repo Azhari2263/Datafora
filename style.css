@@ -2,96 +2,69 @@
     --primary: #007074;
 }
 
+/* Memastikan tinggi layar benar-benar pas di HP */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
 body {
     font-family: 'Inter', sans-serif;
+    /* Menggunakan 100dvh (Dynamic Viewport Height) jika didukung browser modern */
     height: 100vh;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    padding: 20px;
-    /* Jarak aman untuk layar sangat kecil */
+    height: 100dvh;
 }
 
 .blob {
     position: absolute;
-    z-index: -1;
+    z-index: 1;
     filter: blur(60px);
-    /* Blur dikurangi sedikit agar performa mobile lancar */
     opacity: 0.5;
     border-radius: 50%;
-    animation: move 20s infinite alternate;
-}
-
-@keyframes move {
-    from {
-        transform: translate(0, 0) scale(1);
-    }
-
-    to {
-        transform: translate(30px, 50px) scale(1.1);
-    }
 }
 
 .glass-card {
     background: rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    /* Support Safari */
     border: 1px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
     border-radius: 2rem;
-    padding: 3rem 2rem;
-    /* Padding lebih kecil di mobile */
-    width: 100%;
-    max-width: 420px;
-    /* Batas maksimal lebar di desktop */
-    margin: auto;
+    padding: 2.5rem 1.5rem;
+    width: 85%;
+    /* Menggunakan persentase agar pas di HP kecil */
+    max-width: 380px;
 }
 
-/* Responsivitas Logo */
 .datafora-logo {
     font-family: 'Fredoka', sans-serif;
-    font-size: 2.5rem;
-    /* Default mobile */
+    font-size: 2.8rem;
     font-weight: 700;
     display: flex;
     justify-content: center;
-    gap: 2px;
 }
 
 @media (min-width: 768px) {
     .datafora-logo {
         font-size: 4rem;
-        /* Ukuran laptop/tablet */
     }
 
     .glass-card {
         padding: 4rem 3rem;
+        width: 100%;
     }
 }
 
-.char {
-    display: inline-block;
-    filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.1));
-}
-
 .loader-ring {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     border: 3px solid #f1f5f9;
     border-top: 3px solid var(--primary);
     border-radius: 50%;
     animation: spin 1s linear infinite;
-}
-
-@media (min-width: 768px) {
-    .loader-ring {
-        width: 52px;
-        height: 52px;
-        border-width: 4px;
-    }
 }
 
 @keyframes spin {
@@ -100,9 +73,7 @@ body {
     }
 }
 
-/* MARQUEE FOOTER */
-/* Tambahkan ini untuk menggantikan CSS marquee sebelumnya */
-
+/* ANIMASI MARQUEE */
 @keyframes marquee {
     0% {
         transform: translate3d(0, 0, 0);
@@ -114,32 +85,24 @@ body {
 }
 
 .animate-marquee-fast {
-    display: flex;
-    width: fit-content;
-    animation: marquee 12s linear infinite;
-    /* Lebih cepat di mobile agar terbaca */
+    animation: marquee 15s linear infinite;
 }
 
 .animate-marquee-slow {
-    display: flex;
-    width: fit-content;
     animation: marquee 25s linear infinite;
-    /* Lebih lambat di desktop */
 }
 
-/* Memastikan teks tidak turun ke bawah (tetap satu baris) */
 .marquee-item {
-    padding-right: 2rem;
-    font-size: 0.8rem;
+    padding-right: 2.5rem;
+    font-size: 0.75rem;
     font-weight: 500;
-    letter-spacing: 0.025em;
     display: flex;
     align-items: center;
 }
 
 @media (min-width: 768px) {
     .marquee-item {
-        padding-right: 4rem;
-        font-size: 0.95rem;
+        font-size: 0.9rem;
+        padding-right: 5rem;
     }
 }

@@ -3,9 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memuat Datafora...</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Datafora</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Inter:wght@400;500;600;800&display=swap"
         rel="stylesheet">
@@ -13,11 +12,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="bg-[#f8fafc]">
+<body class="bg-[#f8fafc] h-screen w-full overflow-hidden flex flex-col justify-center items-center m-0 p-0 relative">
+
     <div class="blob bg-teal-200 w-64 h-64 md:w-96 md:h-96 -top-10 -left-10"></div>
     <div class="blob bg-purple-200 w-64 h-64 md:w-80 md:h-80 -bottom-10 -right-10"></div>
 
-    <main class="glass-card text-center">
+    <main class="glass-card text-center relative z-20">
         <div class="datafora-logo mb-6 md:mb-8">
             <span class="char text-[#007074]">D</span>
             <span class="char text-[#007074]">A</span>
@@ -31,20 +31,16 @@
 
         <div class="flex flex-col items-center gap-4 md:gap-6">
             <div class="loader-ring"></div>
-            <div class="space-y-1 px-4">
-                <p class="text-xs md:text-sm font-bold text-teal-800 tracking-wider uppercase">Memuat Visualisasi
+            <div class="space-y-1">
+                <p class="text-[10px] md:text-sm font-bold text-teal-800 tracking-wider uppercase">Memuat Visualisasi
                     Data...</p>
-                <p class="text-[10px] md:text-xs text-slate-500 font-medium">Mohon Tunggu Sebentar!</p>
+                <p class="text-[9px] md:text-xs text-slate-500 font-medium">Mohon Tunggu Sebentar!</p>
             </div>
         </div>
     </main>
 
-    <footer
-        class="fixed bottom-0 left-0 w-full bg-[#007074]/95 text-white shadow-[0_-4px_15px_rgba(0,0,0,0.2)] z-50 overflow-hidden">
-        <div class="absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-[#007074] to-transparent z-10"></div>
-        <div class="absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-[#007074] to-transparent z-10"></div>
-
-        <div class="relative flex h-10 md:h-12 items-center">
+    <footer class="fixed bottom-0 left-0 w-full bg-[#007074] text-white z-50">
+        <div class="relative flex h-10 md:h-12 items-center overflow-hidden">
             <div id="marquee-content"
                 class="flex whitespace-nowrap animate-marquee-fast md:animate-marquee-slow invisible">
             </div>
