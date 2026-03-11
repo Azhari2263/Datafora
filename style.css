@@ -101,69 +101,45 @@ body {
 }
 
 /* MARQUEE FOOTER */
-/* --- PERBAIKAN FOOTER RESPONSIF --- */
-.marquee-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    /* Menggunakan min-height agar teks yang panjang tidak terpotong vertikal */
-    min-height: 40px;
-    background: rgba(0, 112, 116, 0.95);
-    color: white;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    white-space: nowrap;
-    z-index: 50;
-    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
-}
+/* Tambahkan ini untuk menggantikan CSS marquee sebelumnya */
 
-@media (min-width: 768px) {
-    .marquee-footer {
-        height: 50px;
-    }
-}
-
-.marquee-container {
-    display: flex;
-    width: fit-content;
-    /* Percepat durasi animasi untuk layar kecil agar tidak bosan menunggu */
-    animation: scroll 15s linear infinite;
-    visibility: hidden;
-    align-items: center;
-}
-
-@media (min-width: 768px) {
-    .marquee-container {
-        animation: scroll 25s linear infinite;
-    }
-}
-
-.marquee-text {
-    /* Gunakan font-size yang nyaman dibaca di HP */
-    font-size: 0.85rem;
-    font-weight: 500;
-    padding-right: 30px;
-    /* Jarak antar pengulangan teks */
-    display: flex;
-    align-items: center;
-}
-
-@media (min-width: 768px) {
-    .marquee-text {
-        font-size: 0.95rem;
-        padding-right: 60px;
-    }
-}
-
-/* Animasi tetap sama, namun performa dioptimalkan dengan translate3d */
-@keyframes scroll {
+@keyframes marquee {
     0% {
         transform: translate3d(0, 0, 0);
     }
 
     100% {
         transform: translate3d(-50%, 0, 0);
+    }
+}
+
+.animate-marquee-fast {
+    display: flex;
+    width: fit-content;
+    animation: marquee 12s linear infinite;
+    /* Lebih cepat di mobile agar terbaca */
+}
+
+.animate-marquee-slow {
+    display: flex;
+    width: fit-content;
+    animation: marquee 25s linear infinite;
+    /* Lebih lambat di desktop */
+}
+
+/* Memastikan teks tidak turun ke bawah (tetap satu baris) */
+.marquee-item {
+    padding-right: 2rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.025em;
+    display: flex;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .marquee-item {
+        padding-right: 4rem;
+        font-size: 0.95rem;
     }
 }

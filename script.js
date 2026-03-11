@@ -35,8 +35,16 @@ async function initRedirect() {
     } catch (error) {
         console.error("Fetch error:", error);
         const container = document.getElementById('marquee-content');
-        const failText = `Selamat Datang di Datafora BPS Kota Singkawang • ${getIndoDate()} • `;
-        container.innerHTML = `<div class="marquee-text">${failText}</div><div class="marquee-text">${failText}</div>`;
+        const infoText = `Selamat Datang di Datafora BPS Kota Singkawang • Hari ${getIndoDate()} • Total Kunjungan: ${data.total} kali •`;
+
+        // Masukkan ke dalam class marquee-item
+        container.innerHTML = `
+        <div class="marquee-item">${infoText}</div>
+        <div class="marquee-item">${infoText}</div>
+        <div class="marquee-item">${infoText}</div>
+        <div class="marquee-item">${infoText}</div>
+    `;
+
         container.style.visibility = 'visible';
 
         setTimeout(() => { window.location.href = GLIDE_URL; }, 3000);
