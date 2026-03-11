@@ -9,18 +9,16 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Inter:wght@400;500;600;800&display=swap"
         rel="stylesheet">
-
     <script src="https://cdn.tailwindcss.com"></script>
-
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-    <div class="blob bg-teal-200 w-96 h-96 -top-20 -left-20"></div>
-    <div class="blob bg-purple-200 w-80 h-80 -bottom-20 -right-20"></div>
+<body class="bg-[#f8fafc]">
+    <div class="blob bg-teal-200 w-64 h-64 md:w-96 md:h-96 -top-10 -left-10"></div>
+    <div class="blob bg-purple-200 w-64 h-64 md:w-80 md:h-80 -bottom-10 -right-10"></div>
 
-    <main class="glass-card text-center mx-4">
-        <div class="datafora-logo mb-8">
+    <main class="glass-card text-center">
+        <div class="datafora-logo mb-6 md:mb-8">
             <span class="char text-[#007074]">D</span>
             <span class="char text-[#007074]">A</span>
             <span class="char text-[#007074]">T</span>
@@ -31,11 +29,12 @@
             <span class="char text-[#d112cc]">A</span>
         </div>
 
-        <div class="flex flex-col items-center gap-6">
+        <div class="flex flex-col items-center gap-4 md:gap-6">
             <div class="loader-ring"></div>
-            <div class="space-y-1">
-                <p class="text-sm font-bold text-teal-800 tracking-wider uppercase">Memuat Visualisasi Data...</p>
-                <p class="text-xs text-slate-500 font-medium">Mohon Tunggu Sebentar!</p>
+            <div class="space-y-1 px-4">
+                <p class="text-xs md:text-sm font-bold text-teal-800 tracking-wider uppercase">Memuat Visualisasi
+                    Data...</p>
+                <p class="text-[10px] md:text-xs text-slate-500 font-medium">Mohon Tunggu Sebentar!</p>
             </div>
         </div>
     </main>
