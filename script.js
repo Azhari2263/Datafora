@@ -12,7 +12,7 @@ async function initRedirect() {
         const data = await response.json();
 
         // Gabungkan teks informasi
-        const fullText = `Selamat Datang di Datafora BPS Kota Singkawang • Hari ${getIndoDate()} • Total Kunjungan: ${data.total} kali • `;
+        const fullText = `Selamat Datang di Datafora BPS Kota Singkawang • Hari ${getIndoDate()} • Jumlah Pengunjung: ${data.total} kali • `;
 
         const container = document.getElementById('marquee-content');
 
